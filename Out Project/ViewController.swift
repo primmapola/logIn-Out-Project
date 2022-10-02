@@ -19,17 +19,17 @@ class ViewController: UIViewController {
         loginTF.autocorrectionType
         passwordTF.isSecureTextEntry = true
         
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(updateElements(notification:)),
-            name: UIResponder.keyboardWillShowNotification,
-            object: nil)
-        
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(updateElements(notification:)),
-            name: UIResponder.keyboardWillHideNotification,
-            object: nil)
+//        NotificationCenter.default.addObserver(
+//            self,
+//            selector: #selector(updateElements(notification:)),
+//            name: UIResponder.keyboardWillShowNotification,
+//            object: nil)
+//
+//        NotificationCenter.default.addObserver(
+//            self,
+//            selector: #selector(updateElements(notification:)),
+//            name: UIResponder.keyboardWillHideNotification,
+//            object: nil)
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -78,15 +78,14 @@ class ViewController: UIViewController {
         super.view.endEditing(true)
     }
     
-    @objc func updateElements(notification: Notification) {
-        guard let userInfo = notification.userInfo as? [String: Any],
-              let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {return}
+//    @objc func updateElements(notification: Notification) {
+//        guard let userInfo = notification.userInfo as? [String: Any],
+//              let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {return}
         
 //        if notification.name == UIResponder.keyboardWillHideNotification {
 //            stackOfButtons.content = UIEdgeInsets.zero
 //        }
     }
-}
 
 
 
